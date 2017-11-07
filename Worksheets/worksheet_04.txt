@@ -13,42 +13,73 @@
      
   1. Write a Python program that will use a for loop to print your name
      10 times, and then the word ``Done'' at the end.
-
+for i in range(10)
+     print("Christian")
+print("Done")
   2. Write a Python program that will use a for loop to print ``Red''
      and then ``Gold'' 20 times. (Red Gold Red Gold Red Gold... all on separate lines.
      Don't use \n.)
-
+for i in range(20)
+     print('red')
+     print('gold')
   3. Write a Python program that will use a for loop to print the even
      numbers from 2 to 100, inclusive.
-
+for i in range(2, 102, 2)
+     print(i)
   4. Write a Python program that will use a while loop to count from
      10 down to, and including, 0. Then print the words ``Blast off!'' Remember, use
      a WHILE loop, don't use a FOR loop.
-
+counter = 10
+while counter >= -1
+     print(counter)
+     counter += -1
+print('Blast off!')
   5. There are three things wrong with this program. List each. (3 pts)
-     
-     print("This program takes three numbers and returns the sum.")
+      print("This program takes three numbers and returns the sum.")
      total = 0
 
      for i in range(3):
          x = input("Enter a number: ")
          total = total + i
      print("The total is:", x)
-     
+    
+the total variable is only used to add it's self, it will only print out the last input, x is a bad variable name
   6. Write a program that prints a random integer from 1 to 10 (inclusive).
-
+import random
+print(random.randrange(1, 11))
   7. Write a program that prints a random floating point number somewhere between
      1 and 10 (inclusive). Do not make the mistake of generating a random number from
      0 to 10 instead of 1 to 10.
-
+import random
+print(random.random() * 9 + 1) 
   8. Write a Python program that will: (3 pts)
      
      * Ask the user for seven numbers
      * Print the total sum of the numbers
      * Print the count of the positive entries, the number entries equal to zero,
      and the number of negative entries. Use an if, elif, else chain, not just three
-     if statements.
-     
+     if statements
+numlist = []
+negativecount = 0
+zerocount = 0
+positivecount = 0
+total = 0
+numlist = []
+for i in range(7):
+     entry = int(input('Enter a number: '))
+     numlist.append(entry)
+     if entry > 0:
+          positivecount += 1
+     elif entry < 0:
+          negativecount += 1
+     else:
+          zerocount += 1
+for j in range(len(numlist)):
+    total += int(numlist[j])
+print('sum' + str(total))
+print(positivecount)
+print(zerocount)
+print(negativecount)
   9. Coin flip tosser: (4 pts)
      
      * Create a program that will print a random 0 or 1.
@@ -56,7 +87,23 @@
      using if statements. Don't select from a list, as shown in the chapter.
      * Add a loop so that the program does this 50 times.
      * Create a running total for the number of heads flipped, and the number of tails.
-     
+import random
+numlist = []
+tailcount = 0
+headcount = 0
+fliplist = []
+for i in range(50):
+    entry = random.randrange(0,2)
+    if entry == 1:
+        print('Tails')
+        numlist.append('Tails')
+        tailcount += 1
+    else:
+        print('Heads')
+        numlist.append('Heads')
+        headcount += 1
+print('Tails: ' + str(tailcount))
+print('Heads: ' + str(headcount)) 
  10. Write a program that plays rock, paper, scissors: (4 pts)
      
      * Create a program that randomly prints 0, 1, or 2.
